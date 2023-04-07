@@ -7,24 +7,24 @@ public class SocialNetwork {
 
 
     public SocialNetwork(String name) {
-        this.accounts = new Account[100];
+        this.accountCount=0;
+        this.accounts = new Account[100]; // Here, new Account[100] means 100 accounts will be added to the accounts array.
         this.name = name;
     }
-
+    // This method creates an account. Enters username, username and password.
     public void createAccount(String name, String userName, String password) {
         String result = "";
         if (isPasswordValid(password)) {
             result += "\nPassword is valid ";
             if (isUserNameExist(userName)) {
                 result += "for " + userName;
-
-                this.accounts[accountCount] = new Account();
-                accounts[accountCount].setName(name);
-                accounts[accountCount].setUserName(userName);
-                accounts[accountCount].setPassword(password);
-                accountCount++;
                 System.out.println(result);
-
+                // Adding account their ınformation to the accounts array. " name,userName,password "
+                this.accounts[accountCount] = new Account();
+                this.accounts[accountCount].setName(name);
+                this.accounts[accountCount].setUserName(userName);
+                this.accounts[accountCount].setPassword(password);
+                this.accountCount++;
             } else {
                 System.out.println(result);
                 System.out.println("This username is taken " + userName);
@@ -34,7 +34,8 @@ public class SocialNetwork {
                     "Password is not valid for " + userName);
         }
     }
-
+        // Checking if the password is valid. To be valid,
+        // the password must be longer than 6 and contain both characters and numbers.
     public boolean isPasswordValid(String password) {
         boolean hasLetter = false;
         boolean hasDigit = false;
@@ -57,6 +58,7 @@ public class SocialNetwork {
         return false;
     }
 
+    // checks if this username has been taken before
     public boolean isUserNameExist(String userName) {
         for (int i = 0; i < this.accountCount; i++) {
             if (userName.equals(accounts[i].getUserName())) {
@@ -66,6 +68,7 @@ public class SocialNetwork {
         return true;
     }
 
+    // this method is used to change the user's activity
     public static void changeStatusOfActiveness(Account account) {
         if (account.isActive()){
             account.setActive(false);
@@ -73,7 +76,8 @@ public class SocialNetwork {
             account.setActive(true);
         }
     }
-
+    // This method returns how many user accounts there are in any social media account.
+    // For example, there are 3 accounts in this question for facebook
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < accountCount; i++) {
