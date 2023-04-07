@@ -9,13 +9,14 @@ public class Account {
     private String[] friends;
     private int numberOfFriends;
     private int numberOfPosts;
-    private int numberOfAccounts = 0;
+    private int numberOfAccounts;
     public Account() {
         this.friends = new String[100];
         this.posts = new Post[100];
         this.isActive = true;
         this.numberOfPosts=0;
         this.numberOfFriends=0;
+        this.numberOfAccounts++;
     }
 
     // This method is used for posting. If the account is active, you can post.
