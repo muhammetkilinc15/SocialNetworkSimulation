@@ -96,7 +96,6 @@ public class Account {
             System.out.println("\nYour account is not active to add friend!");
             return -1;
         }
-
         // Check friend list
         for (int i = 0; i < numberOfFriends; i++) {
             if (userName.equals(friends[i])) {
@@ -106,7 +105,6 @@ public class Account {
         }
         friends[numberOfFriends] = userName;
         numberOfFriends++;
-
         return numberOfFriends;
     }
 
