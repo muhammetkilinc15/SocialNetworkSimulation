@@ -1,28 +1,33 @@
 import java.util.*;
+
 public class Account {
     private String name;
     private String userName;
     private String password;
-    private  boolean isActive;
+    private boolean isActive;
     private Post posts[];
     private String[] friends;
     private int numberOfFriends;
     private int numberOfPosts;
-    private   int numberOfAccounts=0;
+    private int numberOfAccounts = 0;
 
     // Getter and Setter Methods...
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getUserName() {
         return this.userName;
     }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
     public String getPassword() {
         return password;
     }
@@ -31,11 +36,12 @@ public class Account {
         this.password = password;
     }
 
-    public  boolean isActive() {
+    public boolean isActive() {
         return isActive;
     }
-    public void setActive(boolean isActive){
-        this.isActive=isActive;
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
     }
 
     public int getNumberOfFriends() {
@@ -67,18 +73,19 @@ public class Account {
     public Account() {
         friends = new String[100];
         posts = new Post[100];
-        isActive = true;;
+        isActive = true;
+        ;
     }
 
     public Post createPost(String content) {
-        if (isActive){
-            if (numberOfAccounts==0){
+        if (isActive) {
+            if (numberOfAccounts == 0) {
                 System.out.println("\nYour account is not active to create post!");
                 numberOfAccounts++;
             }
-            posts[numberOfPosts] = new Post(content,new Date());
+            posts[numberOfPosts] = new Post(content, new Date());
             numberOfPosts++;
-            return posts[numberOfPosts-1];
+            return posts[numberOfPosts - 1];
         }
         return null;
     }
@@ -89,16 +96,17 @@ public class Account {
             System.out.println("\nYour account is not active to add friend!");
             return -1;
         }
-        if (friends[numberOfFriends] == null) {
-            for (int i = 0; i < numberOfFriends; i++) {
-                if (userName.equals(friends[i])) {
-                    System.out.println(userName + " is already in your friend list!");
-                    return numberOfFriends;
-                }
+
+        // Check friend list
+        for (int i = 0; i < numberOfFriends; i++) {
+            if (userName.equals(friends[i])) {
+                System.out.println(userName + " is already in your friend list!");
+                return numberOfFriends;
             }
-            friends[numberOfFriends] = userName;
-            numberOfFriends++;
         }
+        friends[numberOfFriends] = userName;
+        numberOfFriends++;
+
         return numberOfFriends;
     }
 
