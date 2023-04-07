@@ -74,7 +74,6 @@ public class Account {
         friends = new String[100];
         posts = new Post[100];
         isActive = true;
-        ;
     }
 
     public Post createPost(String content) {
