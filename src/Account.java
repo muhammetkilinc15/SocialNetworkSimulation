@@ -71,27 +71,26 @@ public class Account {
     // ....
 
     public Account() {
-        friends = new String[100];
-        posts = new Post[100];
-        isActive = true;
+        this.friends = new String[100];
+        this.posts = new Post[100];
+        this.isActive = true;
+        this.numberOfPosts=0;
+        this.numberOfFriends=0;
     }
 
     public Post createPost(String content) {
-        if (isActive) {
-            if (numberOfAccounts == 0) {
+        if (!this.isActive) {
                 System.out.println("\nYour account is not active to create post!");
-                numberOfAccounts++;
-            }
+                return null;
+        }else {
             posts[numberOfPosts] = new Post(content, new Date());
             numberOfPosts++;
             return posts[numberOfPosts - 1];
         }
-        return null;
     }
 
     public int addFriend(String userName) {
-
-        if (!isActive) {
+        if (!this.isActive) {
             System.out.println("\nYour account is not active to add friend!");
             return -1;
         }
@@ -99,12 +98,12 @@ public class Account {
         for (int i = 0; i < numberOfFriends; i++) {
             if (userName.equals(friends[i])) {
                 System.out.println(userName + " is already in your friend list!");
-                return numberOfFriends;
+                return -1;
             }
         }
         friends[numberOfFriends] = userName;
         numberOfFriends++;
-        return numberOfFriends;
+        return this.numberOfFriends;
     }
 
     public String toString() {

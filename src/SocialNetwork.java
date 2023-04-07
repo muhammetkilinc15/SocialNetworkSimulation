@@ -5,7 +5,6 @@ public class SocialNetwork {
     Account[] accounts;
     int accountCount = 0;
 
-    static int changeStatusCount = 0; //
 
     public SocialNetwork(String name) {
         this.accounts = new Account[100];
@@ -26,7 +25,6 @@ public class SocialNetwork {
                 accountCount++;
                 System.out.println(result);
 
-
             } else {
                 System.out.println(result);
                 System.out.println("This username is taken " + userName);
@@ -40,6 +38,10 @@ public class SocialNetwork {
     public boolean isPasswordValid(String password) {
         boolean hasLetter = false;
         boolean hasDigit = false;
+        if (password.length()<6){
+            System.out.println("Password length should be longer than 6 characters!");
+            return false;
+        }
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))) {
                 hasDigit = true;
@@ -64,8 +66,11 @@ public class SocialNetwork {
     }
 
     public static void changeStatusOfActiveness(Account account) {
-        account.setActive(changeStatusCount % 2 != 0);
-        changeStatusCount++;
+        if (account.isActive()){
+            account.setActive(false);
+        }else {
+            account.setActive(true);
+        }
     }
 
     public String toString() {

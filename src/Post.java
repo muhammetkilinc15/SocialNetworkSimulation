@@ -8,7 +8,7 @@ public class Post {
     public Post(String content, Date date) {
         this.content = content;
         this.date = date;
-
+        this.likeCounter=0;
     }
     public void increaseLike() {
         this.likeCounter++;
