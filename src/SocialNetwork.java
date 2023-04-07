@@ -5,7 +5,6 @@ public class SocialNetwork {
     Account[] accounts;
     int accountCount = 0;
 
-
     public SocialNetwork(String name) {
         this.accountCount=0;
         this.accounts = new Account[100]; // Here, new Account[100] means 100 accounts will be added to the accounts array.
