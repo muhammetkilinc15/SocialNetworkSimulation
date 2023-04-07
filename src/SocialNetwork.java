@@ -41,16 +41,17 @@ public class SocialNetwork {
         if (password.length()<6){
             System.out.println("Password length should be longer than 6 characters!");
             return false;
-        }
-        for (int i = 0; i < password.length(); i++) {
-            if (Character.isDigit(password.charAt(i))) {
-                hasDigit = true;
-            }
-            if (Character.isLetter(password.charAt(i))) {
-                hasLetter = true;
-            }
-            if (hasDigit && hasLetter) {
-                return true;
+        }else {
+            for (int i = 0; i < password.length(); i++) {
+                if (Character.isDigit(password.charAt(i))) {
+                    hasDigit = true;
+                }
+                if (Character.isLetter(password.charAt(i))) {
+                    hasLetter = true;
+                }
+                if (hasDigit && hasLetter) {
+                    return true;
+                }
             }
         }
         return false;

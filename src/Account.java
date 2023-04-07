@@ -48,24 +48,8 @@ public class Account {
         return numberOfFriends;
     }
 
-    public void setNumberOfFriends(int numberOfFriends) {
-        this.numberOfFriends = numberOfFriends;
-    }
-
     public int getNumberOfPosts() {
         return numberOfPosts;
-    }
-
-    public void setNumberOfPosts(int numberOfPosts) {
-        this.numberOfPosts = numberOfPosts;
-    }
-
-    public int getNumberOfAccounts() {
-        return numberOfAccounts;
-    }
-
-    public void setNumberOfAccounts(int numberOfAccounts) {
-        this.numberOfAccounts = numberOfAccounts;
     }
 
     // ....
