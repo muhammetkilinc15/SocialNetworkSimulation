@@ -15,7 +15,6 @@ public class Account {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -26,10 +25,6 @@ public class Account {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {
@@ -43,7 +38,6 @@ public class Account {
     public void setActive(boolean isActive) {
         this.isActive = isActive;
     }
-
     public int getNumberOfFriends() {
         return numberOfFriends;
     }
@@ -51,9 +45,6 @@ public class Account {
     public int getNumberOfPosts() {
         return numberOfPosts;
     }
-
-    // ....
-
     public Account() {
         this.friends = new String[100];
         this.posts = new Post[100];
