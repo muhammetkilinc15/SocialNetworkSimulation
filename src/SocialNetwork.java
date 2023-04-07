@@ -23,7 +23,6 @@ public class SocialNetwork {
                 accounts[accountCount].setName(name);
                 accounts[accountCount].setUserName(userName);
                 accounts[accountCount].setPassword(password);
-                accounts[accountCount].setNumberOfAccounts(accountCount);
                 accountCount++;
                 System.out.println(result);
 
